@@ -34,6 +34,27 @@ This repository contains two versions:
 
 Both versions run entirely on your own Mac. Nothing is sent to a cloud service.
 
+### Classic
+
+The original game, with a new illustration for every room. Turn on **Enriched**
+(Cyber mode) and a local model adds a paragraph of atmosphere, drawn only from
+what's actually in the room.
+
+<p align="center">
+  <img src="art/screenshots/classic.jpg" width="49%" alt="Classic mode: a leafy forest path beside the original game's text output">
+  <img src="art/screenshots/classic-cyber.jpg" width="49%" alt="Cyber mode: a creek illustration with generated narration beneath it">
+</p>
+
+### Island of Secrets 2.0
+
+Type whatever you like and the game narrates what happens, with a
+`[Room N]` marker on every turn so you can follow along on the map.
+
+<p align="center">
+  <img src="art/screenshots/island2-cabin.jpg" width="49%" alt="Island 2.0: the Logmen on the porch of their cabin, with prose narration">
+  <img src="art/screenshots/island2-pyramid.jpg" width="49%" alt="Island 2.0: the view from the roof of the ancient pyramid">
+</p>
+
 ## Requirements
 
 - A Mac running macOS 13 (Ventura) or later. Apple silicon and Intel both work.
