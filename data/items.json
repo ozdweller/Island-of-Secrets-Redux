@@ -1,0 +1,217 @@
+[
+  {
+    "id": 1,
+    "name": "A SHINY APPLE",
+    "category": "object"
+  },
+  {
+    "id": 2,
+    "name": "A FOSSILISED EGG",
+    "category": "object"
+  },
+  {
+    "id": 3,
+    "name": "A LILY FLOWER",
+    "category": "object"
+  },
+  {
+    "id": 4,
+    "name": "AN EARTHENWARE JUG",
+    "category": "object"
+  },
+  {
+    "id": 5,
+    "name": "A DIRTY OLD RAG",
+    "category": "object"
+  },
+  {
+    "id": 6,
+    "name": "A RAGGED PARCHMENT",
+    "category": "object"
+  },
+  {
+    "id": 7,
+    "name": "A FLICKERING TORCH",
+    "category": "object"
+  },
+  {
+    "id": 8,
+    "name": "A GLISTENING PEBBLE",
+    "category": "object"
+  },
+  {
+    "id": 9,
+    "name": "A WOODMAN'S AXE",
+    "category": "object"
+  },
+  {
+    "id": 10,
+    "name": "A COIL OF ROPE",
+    "category": "object"
+  },
+  {
+    "id": 11,
+    "name": "A RUGGED STAFF",
+    "category": "object"
+  },
+  {
+    "id": 12,
+    "name": "A CHIP OF MARBLE",
+    "category": "object"
+  },
+  {
+    "id": 13,
+    "name": "A POLISHED COAL",
+    "category": "object"
+  },
+  {
+    "id": 14,
+    "name": "A PIECE OF FLINT",
+    "category": "object"
+  },
+  {
+    "id": 15,
+    "name": "A GEOLOGIST'S HAMMER",
+    "category": "object"
+  },
+  {
+    "id": 16,
+    "name": "A WILD CANYON BEAST",
+    "category": "object"
+  },
+  {
+    "id": 17,
+    "name": "A GRAIN LOAF",
+    "category": "food"
+  },
+  {
+    "id": 18,
+    "name": "A JUICY MELON",
+    "category": "food"
+  },
+  {
+    "id": 19,
+    "name": "SOME BISCUITS",
+    "category": "food"
+  },
+  {
+    "id": 20,
+    "name": "A GROWTH OF MUSHROOMS",
+    "category": "food"
+  },
+  {
+    "id": 21,
+    "name": "A BOTTLE OF WATER",
+    "category": "drink"
+  },
+  {
+    "id": 22,
+    "name": "A FLAGON OF WINE",
+    "category": "drink"
+  },
+  {
+    "id": 23,
+    "name": "A FLOWING SAP",
+    "category": "drink"
+  },
+  {
+    "id": 24,
+    "name": "A SPARKLING FRESHWATER SPRING",
+    "category": "drink"
+  },
+  {
+    "id": 25,
+    "name": "THE BOATMAN",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 26,
+    "name": "A STRAPPED OAK CHEST",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 27,
+    "name": "A FRACTURE IN THE COLUMN",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 28,
+    "name": "A MOUTH-LIKE OPENING",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 29,
+    "name": "AN OPEN TRAPDOOR",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 30,
+    "name": "A PARCHED, DESSICATED VILLAGER",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 31,
+    "name": "A STILL OF BUBBLING GREEN LIQUOR",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 32,
+    "name": "A TOUGH SKINNED SWAMPMAN",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 33,
+    "name": "THE SAGE OF THE LILIES",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 34,
+    "name": "WALL AFTER WALL OF EVIL BOOKS",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 35,
+    "name": "A NUMBER OF SOFTER ROOTS",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 36,
+    "name": "FIERCE LIVING STORM THAT FOLLOWS YOU",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 37,
+    "name": "MALEVOLENT WRAITHS WHO PUSH YOU TOWARD THE WELL",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 38,
+    "name": "HIS DREADED CLOAK OF ENTROPY",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 39,
+    "name": "OMEGAN THE EVIL ONE",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 40,
+    "name": "AN IMMENSE SNAKE WOUND AROUND THE HUT",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 41,
+    "name": "A GROUP OF AGGRESSIVE LOGMEN",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 42,
+    "name": "THE ANCIENT SCAVENGER",
+    "category": "scenery_or_character"
+  },
+  {
+    "id": 43,
+    "name": "MEDIAN",
+    "category": "scenery_or_character"
+  }
+]

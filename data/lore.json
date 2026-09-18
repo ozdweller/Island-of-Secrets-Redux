@@ -1,0 +1,146 @@
+{
+  "_comment": "Phase 7.1 data model. story panels are gated by reveal_after so the origin story unlocks progressively rather than dumping on turn one; places are keyed by room id for direct book-sourced prose beyond ROOM_LIST.md's art pointers. Text is an original paraphrase/summary of the backstory in Usborne's 'Island of Secrets' (1984), not a transcription -- see NOTICE.md.",
+  "design_intent": "A text adventure with no on-screen pictures: the book's illustrations and map carry information the game won't tell you. There are no listed exits -- the player works out directions from the map and spots useful objects in the pictures.",
+  "story": [
+    {
+      "panel": 1,
+      "text": "Long ago the world was bright and green. The Ancients raised the Pyramid and made contact with the Sky People, and it was decided that a chosen few from Earth would be invited up to Sky Land.",
+      "reveal_after": {
+        "always": true
+      }
+    },
+    {
+      "panel": 2,
+      "text": "Only one Earthling ever made that journey: Omegan, youngest son of the foremost of the Ancients. He was captivated by Sky Land and by everything the Sky People knew.",
+      "reveal_after": {
+        "any_room_visited": [
+          10
+        ]
+      }
+    },
+    {
+      "panel": 3,
+      "text": "Soon after Omegan's arrival, trouble broke out between the Sky People and the Outer Ones. Messengers descended to the Pyramid and handed each of the Ancients an object, with instructions to hide it well.",
+      "reveal_after": {
+        "any_room_visited": [
+          10
+        ]
+      }
+    },
+    {
+      "panel": 4,
+      "text": "The objects looked unremarkable, and the Ancients puzzled over them, but they did as they were told and scattered to find hiding places. None of them would ever see the others again.",
+      "reveal_after": {
+        "any_room_visited": [
+          10
+        ]
+      }
+    },
+    {
+      "panel": 5,
+      "text": "Foreseeing a great war, the Sky People sent Omegan home with a task: once the war had darkened the Earth, he was to gather the hidden objects and unlock the power sealed inside them, healing the world.",
+      "reveal_after": {
+        "any_room_visited": [
+          10
+        ]
+      }
+    },
+    {
+      "panel": 6,
+      "text": "For that task they entrusted him with the Cloak of Entropy, needed to release the objects' power, and -- since the work would outlast a normal life -- the secret of extending his own.",
+      "reveal_after": {
+        "seen_object": 38
+      }
+    },
+    {
+      "panel": 7,
+      "text": "The war proved worse than anyone had feared. A vast black cloud smothered the land, the earth split open to form the Crimson Canyon, and the lakes turned to poison.",
+      "reveal_after": {
+        "any_room_visited": [
+          16,
+          26,
+          36
+        ]
+      }
+    },
+    {
+      "panel": 8,
+      "text": "Omegan began his search but quickly found it nearly hopeless: he knew neither what the objects were, nor where they lay, nor even how many there were.",
+      "reveal_after": {
+        "any_room_visited": [
+          10
+        ]
+      }
+    },
+    {
+      "panel": 9,
+      "text": "Slowly he came to understand how much power the Cloak held. He used it to raise a castle and build the machinery that kept him alive -- and decided the Earth could stay dark. The objects would never be found, and the Cloak would stay his.",
+      "reveal_after": {
+        "any_room_visited": [
+          17,
+          18
+        ]
+      }
+    },
+    {
+      "panel": 10,
+      "text": "Ages have passed. The land is still dark, and Omegan still rules his Island of Secrets. Nobody has recovered the objects or uncovered the secret of his long life, though stories speak of those who tried.",
+      "reveal_after": {
+        "any_room_visited": [
+          10
+        ]
+      }
+    },
+    {
+      "panel": 11,
+      "text": "One such story tells of Median, a wanderer who got inside the Castle of Secrets, sketched a plan of it, sealed it in a bottle and cast it into the Lake. Whether it's true, no one can say.",
+      "reveal_after": {
+        "seen_object": 43
+      }
+    },
+    {
+      "panel": 12,
+      "text": "Nobody expected Alphan to take up the quest -- clever and wise, yes, but hardly a match for Omegan. Still, he does have the map his explorer grandfather left him. Perhaps he really can set the world right.",
+      "reveal_after": {
+        "always": true
+      }
+    }
+  ],
+  "places": {
+    "10": "Omegan's Sanctum: wherever your quest has led, it ends here. There is no way out -- tread carefully.",
+    "11": "Snelm's Lair: rumour says one of the Ancients left a clue with Snelm, written on something like old paper.",
+    "14": "Clashing Stones: a faint inscription can be made out, hinting that silence won't help -- the right words, stony ones, must be brought and spoken.",
+    "17": "The Clone Factory: perhaps the source of Omegan's unnaturally long life.",
+    "29": "Known as the Well of Weakness -- best avoided unless you feel strong. Omegan may be close by.",
+    "43": "Logmen's Cabin: not a place to linger. Stolen things have a habit of turning up on the table here.",
+    "44": "Grandpa's Shack: the hideaway Alphan's grandfather built for himself.",
+    "56": "The Pyramid: an impressive view from up here. Mind your footing -- there's a hard grey stone lying about.",
+    "58": "Marble Column: the last remnant of the University of the Ancients, the 'Site of Ancient University' on Grandpa's map.",
+    "60": "Adobe Hut: someone lived here not so long ago, but whoever it was has gone.",
+    "70": "Adobe Hut: someone lived here not so long ago, but whoever it was has gone.",
+    "74": "Petrified Village: lava swallowed this village so fast it was frozen in stone -- a glimpse of everyday life from long ago.",
+    "75": "Petrified Village: lava swallowed this village so fast it was frozen in stone -- a glimpse of everyday life from long ago.",
+    "76": "Petrified Village: lava swallowed this village so fast it was frozen in stone -- a glimpse of everyday life from long ago."
+  },
+  "regions": {
+    "_comment": "Region names from Grandpa's map in the book, for narration flavour on rooms with no specific lore. Names only, used loosely.",
+    "names": [
+      "Forest",
+      "Carnivorous Trees",
+      "Biting Bushes",
+      "Logmen's Cabin",
+      "Rutted Hillside",
+      "Megaliths",
+      "The Pyramid",
+      "Petrified Village",
+      "Lilies",
+      "Crimson Canyon",
+      "Impenetrable Forest",
+      "Suffocating Clouds",
+      "Site of Ancient University",
+      "Lake of Secrets",
+      "Blasted Land",
+      "Bluewood Stumps"
+    ]
+  }
+}

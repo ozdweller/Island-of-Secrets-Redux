@@ -1,0 +1,133 @@
+{
+  "_comment": "Phase 7.1 data model. object_id cross-references data/items.json (indices 25-43, the 'scenery_or_character' category) so the engine's own per-turn L() locations tell us where a character currently is, at runtime, with no engine changes. Two entries (speaking-stone, dactyl) have no object_id -- they're room features, not objects in the noun table -- so they carry room_id instead. reveal_after: {\"any_room_visited\": [...]} gates on a fixed room list (used for the two room-bound entries, plus boatman/omegan where the book ties them to a specific first-encounter room); {\"seen_object\": true} gates on the object_id having appeared in any room the player has actually stood in, computed at runtime from the engine's own per-turn state -- no engine changes needed either way. book_caption values are original paraphrases of the book's character notes, not transcriptions -- see NOTICE.md.",
+  "characters": [
+    {
+      "id": "boatman",
+      "name": "The Boatman",
+      "object_id": 25,
+      "room_id": null,
+      "portrait": "art/characters/boatman.jpg",
+      "book_caption": "Even the fearless canyon beasts keep their distance from him -- take care. Still, you'll probably need to deal with him at some point.",
+      "story_role": "Ferries the player onward to room 57 once wisdom is high enough (X>=60); a low-wisdom approach leads to a bad ending (enslaved). See subroutine 1010-1070 in docs/semantics.md.",
+      "reveal_after": {
+        "any_room_visited": [
+          33
+        ]
+      }
+    },
+    {
+      "id": "omegan",
+      "name": "Omegan",
+      "object_id": 39,
+      "room_id": null,
+      "portrait": "art/characters/omegan.jpg",
+      "book_caption": "He roams his castle, so there's no telling where you'll run into him.",
+      "story_role": "The tragic center of the whole backstory: the one Earthling ever sent to Sky Land, given the Cloak of Entropy and a life-extension secret by the Sky People, tasked with collecting the hidden objects after the war -- and chose to hoard the Cloak's power instead. See the story panels in data/lore.json.",
+      "reveal_after": {
+        "any_room_visited": [
+          10
+        ]
+      }
+    },
+    {
+      "id": "speaking-stone",
+      "name": "Speaking Stone",
+      "object_id": null,
+      "room_id": 15,
+      "portrait": "art/characters/speaking-stone.jpg",
+      "book_caption": "For something called the Speaking Stone, this odd glassy boulder is remarkably quiet.",
+      "story_role": "The Clashing Stones inscription is the puzzle clue for waking it -- explains why H$ gets reused as the message \"STONY WORDS\" once seeding is done (docs/semantics.md).",
+      "reveal_after": {
+        "any_room_visited": [
+          15
+        ]
+      }
+    },
+    {
+      "id": "swampman",
+      "name": "Swampman",
+      "object_id": 32,
+      "room_id": null,
+      "portrait": "art/characters/swampman.jpg",
+      "book_caption": "He dwells among the stumps of the great bluewood trees his forebears planted. He hates the Logmen, but can't leave the swamp to take revenge -- or to fetch the liquor he thinks could bring the trees back to life.",
+      "story_role": "Wants the Logmen's liquor (object 31, \"a still of bubbling green liquor\") to restore the bluewood trees.",
+      "reveal_after": {
+        "seen_object": true
+      }
+    },
+    {
+      "id": "logmen",
+      "name": "The Logmen",
+      "object_id": 41,
+      "room_id": null,
+      "portrait": "art/characters/logmen.jpg",
+      "book_caption": "A surly bunch always looking for amusement, hooked on a ferociously strong liquor of their own brewing. Their logging is wiping out the last bluewood trees in the east.",
+      "story_role": "Swampman's sworn enemies; the danger cutscene (thrown in water / tied up) is subroutine 1230-1300.",
+      "reveal_after": {
+        "seen_object": true
+      }
+    },
+    {
+      "id": "median",
+      "name": "Median",
+      "object_id": 43,
+      "room_id": null,
+      "portrait": "art/characters/median.jpg",
+      "book_caption": "A renowned scholar of Ancient times who vanished in mysterious circumstances.",
+      "story_role": "Story panel 11: a wanderer who entered the Castle of Secrets long before Alphan, drew a plan, sealed it in a bottle and threw it into the Lake. The book strongly implies he and the amnesiac Scavenger are the same person.",
+      "reveal_after": {
+        "seen_object": true
+      }
+    },
+    {
+      "id": "scavenger",
+      "name": "The Scavenger",
+      "object_id": 42,
+      "room_id": null,
+      "portrait": "art/characters/scavenger.jpg",
+      "book_caption": "He seems to have lost his memory, and Alphan will have to find some way to help him get it back.",
+      "story_role": "Likely Median, post-transformation and memory loss. The Sage of the Lilies' lilies are said to bring back lost memories -- probable connection worth confirming against the listing.",
+      "reveal_after": {
+        "seen_object": true
+      }
+    },
+    {
+      "id": "sage-of-the-lilies",
+      "name": "Sage of the Lilies",
+      "object_id": 33,
+      "room_id": null,
+      "portrait": "art/characters/sage-of-the-lilies.jpg",
+      "book_caption": "She has meditated so long that only her head still moves. For centuries a small, nagging itch on her back has bothered her. The lilies in her care are said to bring back lost memories.",
+      "story_role": "The \"irritation on her back\" is a strong hint toward an item interaction; her lilies plausibly connect to the Scavenger's memory loss.",
+      "reveal_after": {
+        "seen_object": true
+      }
+    },
+    {
+      "id": "dactyl",
+      "name": "Dactyl",
+      "object_id": null,
+      "room_id": 46,
+      "portrait": "art/characters/dactyl.jpg",
+      "book_caption": "She is guarding something valuable, and won't cooperate until you prove you're serious about your quest.",
+      "story_role": "A give-the-right-thing gate, guarding something at her nest.",
+      "reveal_after": {
+        "any_room_visited": [
+          46
+        ]
+      }
+    },
+    {
+      "id": "canyon-beast",
+      "name": "Canyon Beast",
+      "object_id": 16,
+      "room_id": null,
+      "portrait": "art/characters/canyon-beast.jpg",
+      "book_caption": "Canyon beasts turn up all over the forest, but you'll need help to catch one.",
+      "story_role": "Tameable/rideable once an enabling condition is met -- subroutine 1710-1720, \"RIDE (tamed canyon beast)\".",
+      "reveal_after": {
+        "seen_object": true
+      }
+    }
+  ]
+}

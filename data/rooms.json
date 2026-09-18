@@ -1,0 +1,882 @@
+[
+  {
+    "id": 1,
+    "type_code": 4,
+    "description": "THE FURTHEST DEPTHS OF THE FOREST",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 2,
+    "type_code": 4,
+    "description": "THE DEPTHS OF THE MUTANT FOREST",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 3,
+    "type_code": 7,
+    "description": "A PATH OUT OF THE OVERGROWN DEPTHS",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 4,
+    "type_code": 6,
+    "description": "A CARNIVOROUS TREE",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 5,
+    "type_code": 4,
+    "description": "A CORRAL BENEATH THE CRIMSON CANYON",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 6,
+    "type_code": 7,
+    "description": "THE TOP OF A STEEP CLIFF",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 7,
+    "type_code": 4,
+    "description": "THE MARSH FACTORY",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 8,
+    "type_code": 4,
+    "description": "THE SLUDGE FERMENTATION VATS",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 9,
+    "type_code": 7,
+    "description": "THE UPPERMOST BATTLEMENTS",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 10,
+    "type_code": 4,
+    "description": "OMEGAN'S SANCTUM",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 11,
+    "type_code": 4,
+    "description": "SNELM'S LAIR",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 12,
+    "type_code": 2,
+    "description": "A DARK CAVE",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 13,
+    "type_code": 1,
+    "description": "BROKEN BRANCHES",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 14,
+    "type_code": 1,
+    "description": "A THICKET OF BITING BUSHES",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 15,
+    "type_code": 1,
+    "description": "A HUGE GLASSY STONE",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 16,
+    "type_code": 7,
+    "description": "THE EDGE OF CRIMSON CANYON",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 17,
+    "type_code": 4,
+    "description": "THE CLONE FACTORY",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 18,
+    "type_code": 4,
+    "description": "A CORRIDOR OF CLONE STORAGE CASKS",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 19,
+    "type_code": 7,
+    "description": "EDGE OF THE WELL",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 20,
+    "type_code": 4,
+    "description": "THE ROOM OF SECRET VISIONS",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 21,
+    "type_code": 4,
+    "description": "SNELM'S INNER CHAMBER",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 22,
+    "type_code": 3,
+    "description": "THE SOUTHERN EDGE OF THE FOREST",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 23,
+    "type_code": 7,
+    "description": "A LEAFY PATH",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 24,
+    "type_code": 3,
+    "description": "A FORK IN THE PATH",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 25,
+    "type_code": 7,
+    "description": "AN APPARENTLY UNCLIMBABLE ROCKY PATH",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 26,
+    "type_code": 7,
+    "description": "A LEDGE ATOP THE CRIMSON CANYON",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 27,
+    "type_code": 4,
+    "description": "A TALL ENTRANCE CHAMBER",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 28,
+    "type_code": 4,
+    "description": "A LOW PASSAGE WITH ARMS REACHING FROM THE WALLS",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 29,
+    "type_code": 7,
+    "description": "THE APPROACH TO THE WELL OF DESPAIR",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 30,
+    "type_code": 4,
+    "description": "A DIM CORRIDOR DEEP IN THE CASTLE",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 31,
+    "type_code": 4,
+    "description": "THE STAGNANT WATERS OF THE CRAWLING CREEK",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 32,
+    "type_code": 4,
+    "description": "A SHALLOW POOL OFF THE CREEK",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 33,
+    "type_code": 7,
+    "description": "A LOG PIER, JUTTING OUT OVER THE CREEK",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 34,
+    "type_code": 4,
+    "description": "A STRETCH OF FEATURELESS DUNES",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 35,
+    "type_code": 1,
+    "description": "A GROUP OF TALL TREES",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 36,
+    "type_code": 7,
+    "description": "A NARROW LEDGE AT THE SUMMIT OF THE CANYON",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 37,
+    "type_code": 2,
+    "description": "A MONSTEROUS PORTAL IN THE CASTLE WALL",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 38,
+    "type_code": 4,
+    "description": "A CHAMBER INCHES DEEP WITH DUST",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 39,
+    "type_code": 4,
+    "description": "HERE",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 40,
+    "type_code": 2,
+    "description": "A CARVED ARCHWAY",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 41,
+    "type_code": 4,
+    "description": "A SMALL HUT IN THE LOG SETTLEMENT",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 42,
+    "type_code": 1,
+    "description": "A HUGE SPLIT-LOG TABLE",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 43,
+    "type_code": 4,
+    "description": "THE PORCH OF THE LOGMEN'S CABIN",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 44,
+    "type_code": 4,
+    "description": "GRANDPA'S SHACK",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 45,
+    "type_code": 3,
+    "description": "A CLEARING IN THE TREES BY A RICKETY SHACK",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 46,
+    "type_code": 4,
+    "description": "THE NEST OF A HUGE DACTYL",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 47,
+    "type_code": 6,
+    "description": "THE CASTLE OF DARK SECRETS BY TWO HUGE STONES",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 48,
+    "type_code": 4,
+    "description": "A ROOM LITTERED WITH BONES",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 49,
+    "type_code": 4,
+    "description": "THE CELL OF WHISPERED SECRETS",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 50,
+    "type_code": 4,
+    "description": "THE LIBRARY OF WRITTEN SECRETS",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 51,
+    "type_code": 4,
+    "description": "A REFUSE STREWN STOREROOM",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 52,
+    "type_code": 4,
+    "description": "THE LOGMEN'S HALL",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 53,
+    "type_code": 5,
+    "description": "A LOG BUILDING",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 54,
+    "type_code": 7,
+    "description": "A RUTTED HILLSIDE",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 55,
+    "type_code": 7,
+    "description": "A WINDSWEPT PLAIN AMONGST STONE MEGALITHS",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 56,
+    "type_code": 7,
+    "description": "THE STEPS OF AN ANCIENT PYRAMID",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 57,
+    "type_code": 7,
+    "description": "THE ISLAND OF SECRETS",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 58,
+    "type_code": 1,
+    "description": "A BROKEN MARBLE COLUMN",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 59,
+    "type_code": 7,
+    "description": "AN EXPANSE OF CRACKED, BAKED EARTH",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 60,
+    "type_code": 4,
+    "description": "A DESERTED ADOBE HUT",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 61,
+    "type_code": 4,
+    "description": "A LIVID GROWTH OF MAD ORCHIDS",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 62,
+    "type_code": 4,
+    "description": "A CORNER STREWN WITH BROKEN CHAIRS",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 63,
+    "type_code": 7,
+    "description": "THE BRIDGE NEAR TO A LOG SETTLEMENT",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 64,
+    "type_code": 1,
+    "description": "A CRUMBLING MASS OF PETRIFIED TREES",
+    "exits": {
+      "N": false,
+      "S": true,
+      "E": false,
+      "W": false
+    }
+  },
+  {
+    "id": 65,
+    "type_code": 3,
+    "description": "THE EDGE OF THE PYRAMID",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 66,
+    "type_code": 7,
+    "description": "THE ROOF OF THE ANCIENT PYRAMID",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 67,
+    "type_code": 3,
+    "description": "AN IMPASSABLE SPLIT IN THE PYRAMID",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 68,
+    "type_code": 7,
+    "description": "A BARREN BLASTED WASTELAND",
+    "exits": {
+      "N": true,
+      "S": true,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 69,
+    "type_code": 4,
+    "description": "AN EXPANSE OF BLEAK, BURNT LAND",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 70,
+    "type_code": 5,
+    "description": "A DELAPIDATED ADOBE HUT",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  },
+  {
+    "id": 71,
+    "type_code": 4,
+    "description": "THE HEART OF THE LILIES",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": false
+    }
+  },
+  {
+    "id": 72,
+    "type_code": 4,
+    "description": "THE MIDST OF THE LILIES",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 73,
+    "type_code": 3,
+    "description": "A RIVER'S EDGE BY A LOG BRIDGE",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 74,
+    "type_code": 3,
+    "description": "A PETRIFIED VILLAGE BY A RIVER CROWDED WITH LILIES",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 75,
+    "type_code": 4,
+    "description": "THE REMAINS OF A VILLAGE",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 76,
+    "type_code": 3,
+    "description": "THE ENTRANCE TO A PETRIFIED VILLAGE",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 77,
+    "type_code": 4,
+    "description": "A SWAMP MATTED WITH FIBROUS ROOTS",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 78,
+    "type_code": 2,
+    "description": "A VILLAGE OF HOLLOW STUMPS DEFYING THE SWAMP",
+    "exits": {
+      "N": true,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 79,
+    "type_code": 4,
+    "description": "A TUNNEL INTO ONE OF THE TREE STUMPS",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": true,
+      "W": true
+    }
+  },
+  {
+    "id": 80,
+    "type_code": 4,
+    "description": "A HOLLOW CHAMBER MANY METRES IN DIAMETER",
+    "exits": {
+      "N": false,
+      "S": false,
+      "E": false,
+      "W": true
+    }
+  }
+]

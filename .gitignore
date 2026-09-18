@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+._*
+
+# Swift / Xcode
+.build/
+.swiftpm/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+Package.resolved
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Runtime state written by the games
+data/savegame.json
+data/narration_cache.json
+island2_save.json
+
+# Book material you add locally for your own use (Usborne copyright; do not commit)
+art/Grandpa's map.*
+*.pdf
+art/reference/
