@@ -36,16 +36,48 @@ Both versions run entirely on your own Mac. Nothing is sent to a cloud service.
 
 ## Requirements
 
-- macOS 13 or later (developed on Apple silicon)
-- Xcode or the Xcode Command Line Tools, for `swift`:
-  `xcode-select --install`
-- Python 3.9 or later (standard library only; nothing to `pip install`)
-- [Ollama](https://ollama.com): optional for Classic, required for 2.0. After
-  installing, pull a model:
+- A Mac running macOS 13 (Ventura) or later. Apple silicon and Intel both work.
+- Apple's free **Command Line Tools**, which provide `swift` (to build the apps)
+  and `python3` (to run the game engines). The full Xcode app also works but
+  isn't needed.
+- **Ollama**, a free app for running language models locally. It's optional for
+  Classic and required for 2.0.
 
-  ```sh
-  ollama pull llama3.1:8b
-  ```
+### Step 1: Install the Command Line Tools
+
+Open **Terminal** (Applications → Utilities → Terminal) and run:
+
+```sh
+xcode-select --install
+```
+
+A window appears. Click **Install** and accept the licence. The download is
+around 1 GB and takes a few minutes. If you're told the tools are already
+installed, skip ahead.
+
+Check that it worked:
+
+```sh
+swift --version
+python3 --version
+```
+
+Both should print a version number. Python needs to be 3.9 or later; the
+version bundled with the Command Line Tools is fine, and there's nothing to
+`pip install`.
+
+### Step 2 (optional for Classic): Install Ollama and a model
+
+1. Download Ollama from <https://ollama.com/download> and open it once. It then
+   runs in the menu bar.
+2. In Terminal, download a model (about 5 GB):
+
+   ```sh
+   ollama pull llama3.1:8b
+   ```
+
+Any model you've pulled can be picked from the dropdown in either app. Macs
+with 16 GB of RAM or more will give the smoothest experience.
 
 ## Installation
 
