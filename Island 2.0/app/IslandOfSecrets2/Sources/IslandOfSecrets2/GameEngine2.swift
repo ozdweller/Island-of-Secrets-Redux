@@ -78,9 +78,28 @@ final class GameEngine2: ObservableObject {
 
         let scriptURL = root.appendingPathComponent("Island 2.0/engine/shell_ipc.py")
 
+        // Inside a packaged .app, Contents/Resources (where `root` points)
+        // is meant to be read-only-ish -- writing a save file there risks
+        // invalidating the ad-hoc code signature and isn't where a mac app
+        // is supposed to keep its state anyway. Redirect to the standard
+        // per-user Application Support location in that case; `swift
+        // run`/Xcode dev builds keep saving next to the engine, unchanged.
+        var extraArguments: [String] = []
+        if let resourceURL = Bundle.main.resourceURL, root.standardizedFileURL == resourceURL.standardizedFileURL,
+           let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
+            let saveDir = appSupport.appendingPathComponent("Island of Secrets 2", isDirectory: true)
+            try? FileManager.default.createDirectory(at: saveDir, withIntermediateDirectories: true)
+            extraArguments = ["--save-path", saveDir.appendingPathComponent("island2_save.json").path]
+        }
+
+        let (pythonExecutable, pythonArguments) = PythonRuntime2.launch(
+            scriptPath: scriptURL.path,
+            extraArguments: ["--model", model] + extraArguments
+        )
+
         let proc = Process()
-        proc.executableURL = URL(fileURLWithPath: "/usr/bin/env")
-        proc.arguments = ["python3", scriptURL.path, "--model", model]
+        proc.executableURL = pythonExecutable
+        proc.arguments = pythonArguments
         proc.currentDirectoryURL = root.appendingPathComponent("Island 2.0/engine")
 
         let stdin = Pipe()

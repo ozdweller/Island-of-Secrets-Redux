@@ -26,3 +26,7 @@ island2_save.json
 art/Grandpa's map.*
 *.pdf
 art/reference/
+
+# Local packaging output (scripts/package_app.sh)
+dist/
+*.dmg

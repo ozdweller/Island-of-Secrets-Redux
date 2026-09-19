@@ -1,0 +1,54 @@
+name: Build and release macOS apps
+
+# Builds double-click-able, dependency-free .app/.dmg downloads for both
+# games (see scripts/package_app.sh for what "dependency-free" means --
+# a self-contained Python is embedded, no Xcode/Command Line Tools
+# needed on the machine that runs them) and attaches them to a GitHub
+# Release. Push a tag like `v1.0` to publish a release; use "Run
+# workflow" for a build you just want to sanity-check without tagging.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    name: Build ${{ matrix.target }}
+    runs-on: macos-14
+    strategy:
+      matrix:
+        target: [classic, island2]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -p
+
+      - name: Build ${{ matrix.target }}
+        run: ./scripts/package_app.sh ${{ matrix.target }} dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dmg-${{ matrix.target }}
+          path: dist/*.dmg
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.dmg
+          generate_release_notes: true

@@ -34,18 +34,29 @@ enum ProjectPaths {
             if looksLikeRoot(url) { return url }
         }
 
-        // 2. Walk up from the current working directory (covers `swift run`
+        // 2. A packaged release build: `scripts/package_app.sh` copies
+        //    engine/, listing.bas and art/ straight into
+        //    MyApp.app/Contents/Resources, which is a sibling of
+        //    Contents/MacOS -- not an ancestor of it -- so the upward
+        //    searches below can never find it on their own. Bundle.main
+        //    only resolves to something meaningful inside a real .app
+        //    bundle, so this is a no-op for `swift run`/Xcode.
+        if let resourceURL = Bundle.main.resourceURL, looksLikeRoot(resourceURL) {
+            return resourceURL
+        }
+
+        // 3. Walk up from the current working directory (covers `swift run`
         //    invoked from app/IslandOfSecrets, and Xcode runs that inherit
         //    a sensible cwd).
         let cwd = URL(fileURLWithPath: fm.currentDirectoryPath)
         if let found = searchUpward(from: cwd) { return found }
 
-        // 3. Walk up from the executable's own location (covers a built
+        // 4. Walk up from the executable's own location (covers a built
         //    .app bundle launched from Finder, where cwd is often "/").
         let exeURL = URL(fileURLWithPath: CommandLine.arguments[0]).resolvingSymlinksInPath()
         if let found = searchUpward(from: exeURL.deletingLastPathComponent()) { return found }
 
-        // 4. Last resort: the well-known default location from setup.
+        // 5. Last resort: the well-known default location from setup.
         let fallback = URL(fileURLWithPath: NSHomeDirectory())
             .appendingPathComponent("Desktop/MyApps/Island")
         if looksLikeRoot(fallback) { return fallback }

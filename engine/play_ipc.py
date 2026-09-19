@@ -8,6 +8,7 @@ JSON on stdout/stdin (see io_ipc.py's docstring for the protocol) instead
 of raw terminal text, so a native app can drive it as a subprocess.
 """
 
+import argparse
 import os
 import sys
 import json
@@ -24,11 +25,22 @@ SAVE_PATH = os.path.join(PROJECT_ROOT, 'data', 'savegame.json')
 
 
 def main():
+    # --save-path lets the SwiftUI shell redirect saves outside the app
+    # bundle (e.g. to ~/Library/Application Support) when running from a
+    # packaged .app -- Contents/Resources isn't a sensible place to write
+    # a running app's state. Defaults to the original in-repo location so
+    # `swift run`/dev usage is unchanged.
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--save-path', default=SAVE_PATH)
+    args = parser.parse_args()
+    save_path = args.save_path
+    os.makedirs(os.path.dirname(os.path.abspath(save_path)), exist_ok=True)
+
     with open(LISTING_PATH, encoding='utf-8') as f:
         source = f.read()
 
     interp_holder = [None]
-    io = IpcIO(SAVE_PATH, interp_holder)
+    io = IpcIO(save_path, interp_holder)
     interp = Interpreter(source, io)
     interp_holder[0] = interp
 
