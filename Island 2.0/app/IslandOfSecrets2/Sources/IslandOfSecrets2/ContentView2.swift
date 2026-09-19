@@ -36,6 +36,11 @@ struct ContentView2: View {
     /// models this project has already spiked against.
     @AppStorage("island2Model") private var selectedModel = "llama3.1:8b"
     @State private var hasStarted = false
+    @State private var isCheckingOllama = false
+    /// Set when the pre-Start check (see OllamaStatus2.swift) finds Ollama
+    /// not running or the chosen model not pulled. nil means either the
+    /// check hasn't run yet or it came back fine.
+    @State private var ollamaProblem: OllamaCheckResult2?
     private static let availableModels = [
         "llama3.1:8b", "qwen2.5vl:7b", "qwen2.5:3b", "mistral-nemo:latest",
         "gemma2:27b", "qwen3.5:35b",
@@ -60,6 +65,43 @@ struct ContentView2: View {
                 gameView
             }
         }
+        .alert(
+            ollamaProblem == .modelMissing ? "Model not found" : "Ollama isn't running",
+            isPresented: Binding(
+                get: { ollamaProblem != nil },
+                set: { if !$0 { ollamaProblem = nil } }
+            )
+        ) {
+            Button("Open Ollama.com") {
+                NSWorkspace.shared.open(URL(string: "https://ollama.com/download")!)
+            }
+            // In case this check itself is wrong -- e.g. a custom
+            // OLLAMA_HOST reachable from Python but not reachable the same
+            // way from here -- don't make it impossible to proceed.
+            Button("Start Anyway") { beginGame() }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text(ollamaAlertMessage)
+        }
+    }
+
+    /// Wording for the alert above -- its own property since the
+    /// model-missing case needs to interpolate the exact pull command.
+    private var ollamaAlertMessage: String {
+        switch ollamaProblem {
+        case .notRunning, .none:
+            return "Island of Secrets 2.0 needs Ollama running locally. Download it from ollama.com, open it once, then try again."
+        case .modelMissing:
+            return "Ollama is running, but \"\(selectedModel)\" hasn't been pulled yet. Open Terminal and run:\n\nollama pull \(selectedModel)"
+        case .ok:
+            return ""
+        }
+    }
+
+    private func beginGame() {
+        engine.model = selectedModel
+        engine.start()
+        hasStarted = true
     }
 
     // MARK: - pre-launch model picker
@@ -78,13 +120,21 @@ struct ContentView2: View {
             }
             .pickerStyle(.menu)
             .frame(maxWidth: 280)
-            Button("Start") {
-                engine.model = selectedModel
-                engine.start()
-                hasStarted = true
+            Button(isCheckingOllama ? "Checking..." : "Start") {
+                Task {
+                    isCheckingOllama = true
+                    let result = await OllamaStatus2.check(model: selectedModel)
+                    isCheckingOllama = false
+                    if result == .ok {
+                        beginGame()
+                    } else {
+                        ollamaProblem = result
+                    }
+                }
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
+            .disabled(isCheckingOllama)
         }
         .padding(40)
         .frame(minWidth: 480, minHeight: 320)

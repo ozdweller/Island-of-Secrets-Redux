@@ -18,6 +18,11 @@ struct ContentView: View {
     @AppStorage("islandNarrationEnabled") private var narrationEnabled = false
     @AppStorage("islandNarrationModel") private var narrationModel = "llama3.1:8b"
     @State private var previousStoryPanelIDs: Set<Int> = []
+    /// Set whenever a check kicked off by turning Enriched on (or having
+    /// it already on at launch) finds Ollama not running or the chosen
+    /// model not pulled -- see OllamaStatus.swift. nil means either the
+    /// check hasn't run yet or it came back fine.
+    @State private var ollamaProblem: OllamaCheckResult?
     private static let availableModels = [
         "qwen2.5:3b", "llama3.1:8b", "mistral-nemo:latest",
         "gemma2:27b", "qwen3.5:35b", "qwen2.5vl:7b",
@@ -73,6 +78,29 @@ struct ContentView: View {
         .onChange(of: narrationEnabled) { _ in recordLore() }
         .onChange(of: narrationModel) { _ in recordLore() }
         .onChange(of: engine.transcript.count) { _ in checkForParserMiss() }
+        // Re-checks whenever Enriched is turned on, and once at launch if
+        // it was already on from a previous session -- `.task(id:)` fires
+        // immediately for the starting value, not just on later changes.
+        .task(id: narrationEnabled) {
+            guard narrationEnabled else { return }
+            let result = await OllamaStatus.check(model: narrationModel)
+            ollamaProblem = (result == .ok) ? nil : result
+        }
+        .alert(
+            ollamaProblem == .modelMissing ? "Model not found" : "Ollama isn't running",
+            isPresented: Binding(
+                get: { ollamaProblem != nil },
+                set: { if !$0 { ollamaProblem = nil } }
+            )
+        ) {
+            Button("Open Ollama.com") {
+                NSWorkspace.shared.open(URL(string: "https://ollama.com/download")!)
+            }
+            Button("Turn Off Enriched") { narrationEnabled = false }
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(ollamaAlertMessage)
+        }
         .sheet(isPresented: $showLore) {
             LoreView(store: lore)
         }
@@ -428,11 +456,28 @@ struct ContentView: View {
         .padding(12)
     }
 
+    /// Wording for the alert above -- kept as its own property (rather
+    /// than inline in the .alert call) since the model-missing case needs
+    /// to interpolate the exact `ollama pull` command to run.
+    private var ollamaAlertMessage: String {
+        switch ollamaProblem {
+        case .notRunning, .none:
+            return "Enriched narration needs Ollama running locally. Download it from ollama.com, open it once, then try again."
+        case .modelMissing:
+            return "Ollama is running, but \"\(narrationModel)\" hasn't been pulled yet. Open Terminal and run:\n\nollama pull \(narrationModel)"
+        case .ok:
+            return ""
+        }
+    }
+
     /// Phase 7.3's visible feature: the local model's expanded take on the
     /// current room, additive to (never replacing) the classic transcript
-    /// text. Silently absent on error -- see NarrationService's own
-    /// "never block gameplay" posture -- except a one-line note so the author
-    /// knows why nothing showed up (e.g. Ollama isn't running).
+    /// text. Silently absent on a one-off narration error -- see
+    /// NarrationService's own "never block gameplay" posture -- except a
+    /// one-line note in the panel itself. The common case of Ollama not
+    /// running/model not pulled at all is instead caught up front by the
+    /// ollamaProblem alert above, so a downloaded .app's player gets a
+    /// clear explanation rather than a permanently quiet panel.
     private var narrationPanel: some View {
         VStack(alignment: .leading, spacing: 6) {
             Divider()
