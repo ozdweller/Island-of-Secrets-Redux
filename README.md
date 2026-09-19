@@ -80,7 +80,7 @@ with 16 GB of RAM or more will give the smoothest experience.
 
 ## Download
 
-Go to the [Releases page](https://github.com/ozdweller/Island-Of-Secrets-Redux/releases),
+Go to the [Releases page](https://github.com/ozdweller/Island-of-Secrets-Redux/releases),
 grab the latest `.dmg` for whichever version you want (or both), open it and
 drag the app to **Applications**. Each download is a complete, ready-to-run
 app -- no compiling, no Xcode, no separate Python install.
@@ -132,8 +132,8 @@ version bundled with the Command Line Tools is fine, and there's nothing to
 `pip install`.
 
 ```sh
-git clone https://github.com/ozdweller/Island-Of-Secrets-Redux.git
-cd Island-Of-Secrets-Redux
+git clone https://github.com/ozdweller/Island-of-Secrets-Redux.git
+cd Island-of-Secrets-Redux
 chmod +x launch.command launch2.command
 ```
 
