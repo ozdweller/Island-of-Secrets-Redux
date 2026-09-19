@@ -17,6 +17,10 @@ jobs:
     name: Build ${{ matrix.target }}
     runs-on: macos-14
     strategy:
+      # Keep building the other target even if one fails -- otherwise a
+      # bug specific to one game hides whether the other one is fine,
+      # which makes debugging a failed run much slower.
+      fail-fast: false
       matrix:
         target: [classic, island2]
     steps:
@@ -26,7 +30,10 @@ jobs:
         run: sudo xcode-select -p
 
       - name: Build ${{ matrix.target }}
-        run: ./scripts/package_app.sh ${{ matrix.target }} dist
+        # Invoked via `bash` rather than `./scripts/package_app.sh` so
+        # this doesn't depend on the executable bit having survived
+        # however the script last got edited/committed.
+        run: bash scripts/package_app.sh ${{ matrix.target }} dist
 
       - uses: actions/upload-artifact@v4
         with:
@@ -38,7 +45,7 @@ jobs:
     name: Publish GitHub Release
     needs: build
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') && needs.build.result == 'success'
     permissions:
       contents: write
     steps:
